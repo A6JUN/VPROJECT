@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>EDIT PRODUCT</div>
+<div>
+    <form method="post" action="{% url 'prdtupdate' dataid=data.id %}">
+        {% csrf_token %}
+    <label>Product name :</label>
+<input name="pname" placeholder="ProductName" value="{{data.pname}}"><br><br>
+<label>Description :</label>
+<textarea name="description" placeholder="Description">{{data.description}}</textarea><br><br>
+<label>Product Size :</label>
+<input name="size" type="number" placeholder="Size" value="{{data.size}}"><br><br>
+<label>Product Color :</label>
+<input name="color" placeholder="Color" value="{{data.color}}"><br><br>
+<label>Status :</label>
+<select name="status">
+    <option>{{data.status}}</option>
+    <option>Available</option>
+    <option>Not Available</option>
+</select><br><br>
+<button type="submit">SUBMIT</button>
+</form>
+
+</div>
+
+
+</body>
+</html>

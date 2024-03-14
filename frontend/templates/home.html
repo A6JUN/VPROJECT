@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><h1>ADD PRODUCT</h1></div><br>
+<div>
+    <form method="post" action="{% url 'prdtdatasave' %}">
+        {% csrf_token %}
+    <label>Product name :</label>
+<input name="pname" placeholder="ProductName"><br><br>
+<label>Description :</label>
+<textarea name="description" placeholder="Description"></textarea><br><br>
+<label>Product Size :</label>
+<input name="size" type="number" placeholder="Size"><br><br>
+<label>Product Color :</label>
+<input name="color" placeholder="Color"><br><br>
+<label>Status :</label>
+<select name="status">
+    <option></option>
+    <option>Available</option>
+    <option>Not Available</option>
+</select><br><br>
+<button type="submit">SUBMIT</button>
+</form>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:50px">
+    <a href="{% url 'prdtdisplay' %}">
+    <button>DISPLAY PRODUCT</button>
+
+</a>
+</div>
+</body>
+</html>

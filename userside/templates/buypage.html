@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>BUY PRODUCT</h1>
+<div>
+    <table width="100%">
+        <thead>
+        <tr>
+            <th>PRODUCT NAME</th>
+            <th>DESCRIPTION</th>
+            <th> SIZE</th>
+            <th> COLOR</th>
+            <th>STATUS</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for i in data1 %}
+
+        <tr style="text-align:center">
+            <td>{{i.pname}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.size}}</td>
+            <td>{{i.color}}</td>
+            <td>{{i.status}}</td>
+            <td>
+                <a href="{% url 'Oder' proid=i.id %}"><button>ORDER NOW</button></a></td>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
